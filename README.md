@@ -1,1 +1,2 @@
-# javascript_training_trails
+# snippet_trails
+for reference 
