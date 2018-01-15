@@ -1,2 +1,2 @@
 # snippet_trails
-for reference 
+Just for reference 
