@@ -1,0 +1,19 @@
+
+//create file in client side and download in some format
+
+
+//html
+<a href="data:text/plain;charset=UTF-8,Hello%20World!" download="hello.txt">Download (static)</a>
+
+<a id="programatically" href="" download="date.txt">Download (dynamic)</a>
+
+
+
+
+
+//js
+//file download component
+$("a#programatically").click(function(){
+    var now = new Date().toString();
+    this.href = "data:text/plain;charset=UTF-8,"  + encodeURIComponent(now);
+});
