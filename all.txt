@@ -1,0 +1,795 @@
+//
+//  ViewController.swift
+//  ex1
+//
+//  Created by exam1001 on 20/12/17.
+//  Copyright © 2017 exam1001. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    
+    @IBOutlet var name: UILabel!
+    
+    @IBOutlet var box: UITextField!
+    
+    @IBAction func change(_ sender: Any) {
+        box.text="Hello";
+        name.textColor=UIColor.red;
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+}
+
+
+//  ViewController.swift
+//  Ex_2petrolBUNK
+//ex2
+//  Created by exam1001 on 10/01/18.
+//  Copyright © 2018 exam1001. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet var to: UITextField!
+    
+    @IBOutlet var li: UITextField!
+    
+    @IBOutlet var co: UITextField!
+    
+    @IBAction func gr(_ sender: Any) {
+        let a=li.text;
+        let b=Int(a!);
+        let c=co.text;
+        let d=Int(c!);
+        let v=b!*d!;
+        to.text=String(v);
+        
+        
+    }
+    
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+}
+
+
+
+
+//
+//  ViewController.swift
+//  prime
+//ex2.2
+//  Created by exam1001 on 21/02/18.
+//  Copyright © 2018 exam1001. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    
+    @IBOutlet var number: UITextField!
+    
+    
+    @IBAction func prim(_ sender: Any) {
+        let nu = number.text
+        let n = Int(nu!)
+        var i = 2
+        while i<n!{
+            if n!%i==0{
+                break;
+            }
+            i+=1
+        }
+        if i==n{
+            number.text = "Prime"
+        }
+        else{
+            number.text="Not Prime"
+        }
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+}
+
+
+
+//
+//  ViewController.swift
+//  factorial
+//ex2.3
+//  Created by exam1001 on 21/02/18.
+//  Copyright © 2018 exam1001. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet var num: UITextField!
+    
+    @IBAction func touch(_ sender: Any) {
+        let x = num.text
+        let n = Int(x!)
+        var i = 1
+        var s=1
+        while i<=n! {
+            s=s*i
+            i=i+1
+        }
+        num.text=String(s)
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+}
+
+
+
+
+
+//
+//  ViewController.swift
+//  calculator
+//ex3
+//  Created by exam1001 on 10/01/18.
+//  Copyright © 2018 exam1001. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet var op1: UITextField!
+    @IBOutlet var op2: UITextField!
+    @IBOutlet var ans: UITextField!
+    var x=0;
+    
+    
+    
+    @IBAction func add(_ sender: Any) {
+        let a  = op1.text;
+        var x = Int(a!)
+        let b = op2.text
+        let y = Int(b!)
+        let z = x! + y!
+        let st = String(z)
+        ans.text = st
+    }
+    
+    @IBAction func sub(_ sender: Any) {
+        let a  = op1.text;
+        let x = Int(a!)
+        let b = op2.text
+        let y = Int(b!)
+        let z = x! - y!
+        let st = String(z)
+        ans.text = st
+    }
+    
+    @IBAction func mul(_ sender: Any) {
+        let a  = op1.text;
+        let x = Int(a!)
+        let b = op2.text
+        let y = Int(b!)
+        let z = x! * y!
+        let st = String(z)
+        ans.text = st
+    }
+    
+    @IBAction func div(_ sender: Any) {
+        let a  = op1.text;
+        let x = Int(a!)
+        let b = op2.text
+        let y = Int(b!)
+        let z = x! / y!
+        let st = String(z)
+        ans.text = st
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+}
+
+
+
+
+
+//  ViewController.swift
+//  graphicalPrimitives
+//ex4
+//  Created by exam1001 on 21/02/18.
+//  Copyright © 2018 exam1001. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet var myCircle: UIView!
+    var semiCircleLayer=CAShapeLayer();
+    
+    
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //Circle Points
+        let center = CGPoint (x: myCircle.frame.size.width / 2, y: myCircle.frame.size.height / 2)
+        let circleRadius = myCircle.frame.size.width / 2
+        let circlePath = UIBezierPath(arcCenter: center, radius: circleRadius, startAngle: CGFloat(M_PI), endAngle: CGFloat(M_PI * 2), clockwise: true)
+        
+        
+        semiCircleLayer.path = circlePath.cgPath
+        semiCircleLayer.strokeColor = UIColor.red.cgColor
+        semiCircleLayer.fillColor = UIColor.blue.cgColor
+        semiCircleLayer.lineWidth = 8
+        semiCircleLayer.strokeStart = 0
+        semiCircleLayer.strokeEnd  = 1
+        myCircle.layer.addSublayer(semiCircleLayer)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+}
+
+
+//
+//  ViewController.swift
+//  graphicalPrimitives
+//ex4.2
+//  Created by exam1001 on 21/02/18.
+//  Copyright © 2018 exam1001. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet var myCircle: UIView!
+    var semiCircleLayer=CAShapeLayer();
+    
+    
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //Circle Points
+        let center = CGPoint (x: myCircle.frame.size.width / 2, y: myCircle.frame.size.height / 2)
+        let circleRadius = myCircle.frame.size.width / 4
+        let circlePath = UIBezierPath(arcCenter: center, radius: circleRadius, startAngle: CGFloat(M_PI), endAngle: CGFloat(M_PI * 4), clockwise: true)
+        
+        
+        semiCircleLayer.path = circlePath.cgPath
+        semiCircleLayer.strokeColor = UIColor.red.cgColor
+        semiCircleLayer.fillColor = UIColor.yellow.cgColor
+        semiCircleLayer.lineWidth = 8
+        semiCircleLayer.strokeStart = 0
+        semiCircleLayer.strokeEnd  = 1
+        myCircle.layer.addSublayer(semiCircleLayer)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+}
+
+
+
+
+//
+//  ViewController.swift
+//  AutoLayout
+//ex5
+//  Created by exam1001 on 21/02/18.
+//  Copyright © 2018 exam1001. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+    @IBOutlet var TT: UILabel!
+    
+    @IBAction func HI(_ sender: Any) {
+        TT.textColor=UIColor.brown;
+        
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+
+
+
+//
+//  ViewController.swift
+//  timer
+//ex6
+//  Created by exam1001 on 14/02/18.
+//  Copyright © 2018 naveen. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    internal var c :Int = 0
+    @IBOutlet var time: UILabel!
+    @IBAction func start(_ sender: Any) {
+        timer = Timer.scheduledTimer(timeInterval: 1.0,target:self,selector:#selector(updateCountDown),userInfo:nil,repeats: true)
+    }
+    @objc func updateCountDown()
+    {
+        c+=1
+        time.text=String(format: "%02d:%02d:%02d",c/3600,(c%3600)/60,(c%3600)%60)
+    }
+    
+    @IBAction func stop(_ sender: Any) {
+        timer.invalidate()
+    }
+    
+    
+    @IBAction func reset(_ sender: Any) {
+        c=0
+        stop(sender)
+        time.text!="00:00:00"
+    }
+    var timer=Timer()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+}
+
+
+
+
+
+
+
+
+//
+//  ViewController.swift
+//  Alert Message
+//ex7
+//  Created by exam1001 on 14/02/18.
+//  Copyright © 2018 exam1001. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBAction func ShowAlert(_ sender: Any) {
+        let alertController=UIAlertController(title: "ALERT DEMO", message:"WELCOME TO MAD LAB", preferredStyle:UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alertController,animated: false,completion: nil)
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+}
+
+
+
+
+//
+//  ViewController.swift
+//  Map
+//ex8
+//  Created by exam1001 on 14/02/18.
+//  Copyright © 2018 naveen. All rights reserved.
+//
+
+import UIKit
+import MapKit
+class ViewController: UIViewController {
+    
+    
+    
+    @IBOutlet var mapview: MKMapView!
+    
+    
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let loc=CLLocationCoordinate2D(latitude:13.110509,longitude:80.260691)
+        let span=MKCoordinateSpanMake(0.05, 0.05)
+        let region=MKCoordinateRegion(center: loc, span: span)
+        mapview.setRegion(region, animated: true)
+        let ann=MKPointAnnotation()
+        ann.coordinate=loc
+        ann.title="CHENNAI"
+        ann.subtitle="INDIA"
+        mapview.addAnnotation(ann)
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+}
+
+
+
+
+//ex9
+
+import UIKit
+
+
+
+class ViewController: UIViewController {
+
+
+
+    
+
+    @IBOutlet var im: UIView!
+
+    
+
+    @IBOutlet var imageview: UIImageView!
+
+    
+
+    
+
+    override func viewDidLoad() {
+
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view, typically from a nib.
+
+        var f1 : UIImage!
+
+        var f2 : UIImage!
+
+        var f3 : UIImage!
+
+
+        var images : [UIImage]!
+
+        var animatedimage : UIImage!
+
+        f1 = UIImage(named : "f1.jpg")
+
+        f2 = UIImage(named : "f2.jpg")
+
+        f3 = UIImage(named : "f3.jpg")
+
+        
+
+        
+
+        images = [f1,f2,f3];
+
+        
+
+        animatedimage = UIImage.animatedImage(with: images, duration: 2.0)
+
+        imageview.image=animatedimage;
+
+        
+
+    }
+
+
+
+    override func didReceiveMemoryWarning() {
+
+        super.didReceiveMemoryWarning()
+
+        // Dispose of any resources that can be recreated.
+
+    }
+
+
+
+
+
+}
+
+
+
+
+
+//webview
+//ex10
+
+import UIKit
+
+import WebKit
+
+class ViewController: UIViewController, WKNavigationDelegate {
+
+    var webView: WKWebView!
+
+    override func viewDidLoad() {
+
+        super.viewDidLoad()
+
+        let url = URL(string: "https://facebook.com")!
+
+        webView.load(URLRequest(url: url))
+
+        let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
+
+        toolbarItems = [refresh]
+
+        navigationController?.isToolbarHidden = false
+
+    
+
+        // Do any additional setup after loading the view, typically from a nib.
+
+    }
+
+    override func loadView() {
+
+        webView = WKWebView()
+
+        webView.navigationDelegate = self
+
+        view = webView
+
+    }
+
+    override func didReceiveMemoryWarning() {
+
+
+
+        super.didReceiveMemoryWarning()
+
+        // Dispose of any resources that can be recreated.
+
+    }
+
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+
+        title = webView.title
+
+    }
+
+
+
+
+
+}
+
+
+
+
+//ex11
+/* Implement an application that implements Multi threading */
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet var label: UILabel!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let queue = OperationQueue()        
+        for i in 0 ..< 5
+        {
+            let o=op(val: i as Int)
+            queue.addOperation(o)
+            label.text=label.text!+String(o.n)
+        }
+
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    class op:Operation
+        
+    {
+        var n=0
+        init(val:Int)
+        {
+            n=val
+        }
+        override func main() {
+            print(n)   
+        }   
+    }
+}
+
+
+
+
+
+
+
+
+
+//ex12
+// ViewController.swift
+// DBExample
+//
+// Created by exam1001 on 20/03/18.
+// Copyright © 2018 exam1001. All rights reserved.
+//
+import UIKit
+class ViewController: UIViewController {
+@IBOutlet var status: UILabel!
+@IBOutlet var dept: UITextField!
+@IBOutlet var name: UITextField!
+var databasePath = String()
+override func viewDidLoad() {
+super.viewDidLoad()
+// Do any additional setup after loading the view, typically from a nib.
+let filemgr = FileManager.default
+let dirPaths = filemgr.urls(for: .documentDirectory,
+in: .userDomainMask)
+
+databasePath = dirPaths[0].appendingPathComponent(&quot;contacts.db&quot;).path
+
+if !filemgr.fileExists(atPath: databasePath as String) {
+
+let contactDB = FMDatabase(path: databasePath as String)
+
+if contactDB == nil {
+print(&quot;Error: \(contactDB.lastErrorMessage())&quot;)
+}
+
+if (contactDB.open()) {
+let sql_stmt = &quot;CREATE TABLE IF NOT EXISTS CONTACTS (ID INTEGER PRIMARY
+KEY AUTOINCREMENT, NAME TEXT, DEPT TEXT)&quot;
+if !(contactDB.executeStatements(sql_stmt)) {
+print(&quot;Error: \(contactDB.lastErrorMessage())&quot;)
+}
+contactDB.close()
+} else {
+print(&quot;Error: \(contactDB.lastErrorMessage())&quot;)
+}
+}
+
+}
+@IBAction func FindData(_ sender: Any) {
+let contactDB = FMDatabase(path: databasePath as String)
+
+if (contactDB.open()) {
+let querySQL = &quot;SELECT dept FROM CONTACTS WHERE name = &#39;\(name.text!)&#39;&quot;
+
+let results:FMResultSet? = contactDB.executeQuery(querySQL, withArgumentsIn: [])
+
+
+if results?.next() == true {
+dept.text = results?.string(forColumn: &quot;dept&quot;)
+status.text = &quot;Record Found&quot;
+} else {
+status.text = &quot;Record not found&quot;
+dept.text = &quot;&quot;
+}
+contactDB.close()
+} else {
+print(&quot;Error: \(contactDB.lastErrorMessage())&quot;)
+}
+
+}
+@IBAction func SaveData(_ sender: Any) {
+
+let contactDB = FMDatabase(path: databasePath as String)
+
+if (contactDB.open()) {
+
+let insertSQL = &quot;INSERT INTO CONTACTS (name, dept) VALUES (&#39;\(name.text!)&#39;,
+&#39;\(dept.text!)&#39;)&quot;
+
+let result = contactDB.executeUpdate(insertSQL,
+withArgumentsIn: [])
+
+if !result {
+status.text = &quot;Failed to add contact&quot;
+print(&quot;Error: \(contactDB.lastErrorMessage())&quot;)
+} else {
+status.text = &quot;Contact Added&quot;
+name.text = &quot;&quot;
+dept.text = &quot;&quot;
+}
+} else {
+print(&quot;Error: \(contactDB.lastErrorMessage())&quot;)
+}
+}
+override func didReceiveMemoryWarning() {
+super.didReceiveMemoryWarning()
+// Dispose of any resources that can be recreated.
+}
+
+}
+
+
